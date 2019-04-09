@@ -1,0 +1,7 @@
+
+exports.config = {
+    jwksUri: 'https://login.microsoftonline.com/{tenantid}/discovery/v2.0/keys',
+    appid: '<application id>,
+    issuer: 'https://sts.windows.net/{tenantid}/'
+};
+  

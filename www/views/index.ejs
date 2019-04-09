@@ -1,0 +1,32 @@
+<% if (!user) { %>
+	<h2>Welcome! Please log in.</h2>
+	<a href="/login">Log In</a>
+<% } else { %>
+	<style>
+		body {
+			padding:10px;
+		}
+		#r {
+			border: 1px dashed #c0c0c0;
+			margin: 20px 0 20px 0;
+			overflow:auto;
+			height:200px;
+		}
+	</style>
+	<h2>Hello, <%= user.displayName %>.</h2>
+	<a href="/account">Account Info</a></br>
+	<a href="/logout">Log Out</a>
+	<h3>API Call...</h3>
+	<button id="btn">Call API!</button>
+	<div id="r"></div>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	<script language="javascript">
+		$(document).ready(function() {
+			$("#btn").click( function() {
+				$.getJSON("/api/v1/items", function(data) {
+					$("#r").append(JSON.stringify(data));
+				})
+			});
+		});
+	</script>
+<% } %>

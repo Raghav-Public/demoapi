@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Passport-OpenID Example</title>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	</head>
+	<body>
+		<% if (!user) { %>
+			<p>
+			<a href="/">Home</a> | 
+			<a href="/login">Log In</a>
+			</p>
+		<% } else { %>
+			<p>
+			<a href="/">Home</a> | 
+			<a href="/account">Account</a> | 
+			<a href="/logout">Log Out</a>
+			</p>
+		<% } %>
+		<%- body %>
+	</body>
+</html>
